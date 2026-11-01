@@ -3,7 +3,7 @@
 Co-op debugging where each player is half-blind and one shared agent sees everything.
 
 **Live:** https://split-c6t9.onrender.com
-**Repo:** [your GitHub repo link]
+**Repo:** https://github.com/BenCoy09/Split
 
 ## How it works
 - One bug, two roles. The **logs** player sees runtime values. The **source** player sees code.

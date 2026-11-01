@@ -1,0 +1,14 @@
+{
+  "name": "split",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @split/server",
+    "dev:web": "npm run dev --workspace @split/web",
+    "test": "npm test --workspace @split/server",
+    "start": "npm run start --workspace @split/server"
+  }
+}

@@ -1,0 +1,11 @@
+
+*.tsbuildinfo
+node_modules/
+.env
+.env.*
+*.log
+.next/
+dist/
+
+
+\n/*.txt\n

@@ -1,0 +1,15 @@
+{
+  "name": "@split/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=../../.env --env-file-if-exists=.env src/server.js",
+    "start": "node --env-file-if-exists=../../.env --env-file-if-exists=.env src/server.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

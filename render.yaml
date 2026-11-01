@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: split
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace @split/web
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: AGENT_PROVIDER
+        sync: false
+      - key: AGENT_API_KEY
+        sync: false
+      - key: AGENT_MODEL
+        sync: false

@@ -1,0 +1,2 @@
+GET / -> ERR 7 000
+GET /logs?code=X -> ERR 7 000

@@ -1,0 +1,61 @@
+===== package.json
+{
+  "name": "split",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @split/server",
+    "dev:web": "npm run dev --workspace @split/web",
+    "test": "npm test --workspace @split/server",
+    "start": "npm run start --workspace @split/server"
+  }
+}
+
+===== apps/server/package.json
+{
+  "name": "@split/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=../../.env --env-file-if-exists=.env src/server.js",
+    "start": "node --env-file-if-exists=../../.env --env-file-if-exists=.env src/server.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
+
+===== apps/server/src/server.js
+import express from 'express';
+import { router } from './routes.js';
+import { providerSelfTest } from './agent.js';
+
+const app = express();
+app.use(express.json());
+app.use('/api', router);
+
+const port = Number(process.env.PORT) || 4001;
+app.listen(port, () => {
+  console.log(`SPLIT server listening on http://localhost:${port}`);
+  providerSelfTest();
+});
+
+===== apps/web/next.config.mjs
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:4001/api/:path*',
+      },
+    ];
+  },
+};
+
+export default nextConfig;

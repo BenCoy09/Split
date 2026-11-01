@@ -1,4 +1,4 @@
-(node:18668) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(node:20996) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 
 > @split/server@0.1.0 start
@@ -6,54 +6,22 @@
 
 
 > @split/web@0.1.0 start
-> next start -p 3000
+> next start
 
 .env not found. Continuing without it.
-node:events:505
-    throw er; // Unhandled 'error' event
-    ^
+SPLIT server listening on http://localhost:4002
+   ▲ Next.js 15.5.28
+   - Local:        http://localhost:3005
+   - Network:      http://172.21.208.1:3005
 
-Error: listen EADDRINUSE: address already in use :::4002
-    at Server.setupListenHandle [as _listen2] (node:net:2328:16)
-    at listenInCluster (node:net:2437:12)
-    at Server.listen (node:net:2562:7)
-    at app.listen (C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\node_modules\express\lib\application.js:635:24)
-    at file:///C:/Users/HP/Documents/.trmi/worktrees/build-cdcnw8/apps/server/src/server.js:10:5
-    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
-    at async node:internal/modules/esm/loader:647:26
-    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
-Emitted 'error' event on Server instance at:
-    at emitErrorNT (node:net:2416:8)
-    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
-  code: 'EADDRINUSE',
-  errno: -4091,
-  syscall: 'listen',
-  address: '::',
-  port: 4002
-}
+ ✓ Starting...
+[agent] GET /openai/v1/models model=openai/gpt-oss-120b -> HTTP 200
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\HP\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\package-lock.json
 
-Node.js v24.21.0
-npm error Lifecycle script `start` failed with error:
-npm error code 1
-npm error path C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\apps\server
-npm error workspace @split/server@0.1.0
-npm error location C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\apps\server
-npm error command failed
-npm error command C:\Windows\system32\cmd.exe /d /s /c node --env-file-if-exists=../../.env --env-file-if-exists=.env src/server.js
- ⨯ Failed to start server
-Error: listen EADDRINUSE: address already in use :::3000
-    at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
-    at new Promise (<anonymous>) {
-  code: 'EADDRINUSE',
-  errno: -4091,
-  syscall: 'listen',
-  address: '::',
-  port: 3000
-}
-npm error Lifecycle script `start` failed with error:
-npm error code 1
-npm error path C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\apps\web
-npm error workspace @split/web@0.1.0
-npm error location C:\Users\HP\Documents\.trmi\worktrees\build-cdcnw8\apps\web
-npm error command failed
-npm error command C:\Windows\system32\cmd.exe /d /s /c next start -p 3000
+[agent] startup check POST /openai/v1/chat/completions model=openai/gpt-oss-120b -> OK
+ ✓ Ready in 1837ms

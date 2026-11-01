@@ -3,6 +3,7 @@
 A co-op debugging game. One room, two players, one bug: the **logs** player sees only runtime output, the **source** player sees only code. Neither can solve it alone — they talk it out, then submit a fix.
 
 This repo currently contains the server half (`apps/server`): in-memory rooms, role-filtered views, REST + SSE. The Next.js web app, agent endpoint, patch approval, and verdict flow are later phases.
+about:https://split-c6t9.onrender.com/
 
 ## Run
 
